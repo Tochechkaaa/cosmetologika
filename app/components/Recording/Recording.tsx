@@ -1,5 +1,6 @@
 import styles from "./Recording.module.scss";
 import { aosDelay } from "../../lib/aos";
+import { RecordingPrices } from "./RecordingPrices";
 
 // Купівля запису: Woo-товар 13379 на estyderm (LearnPress курс 13350), одразу на чекаут.
 const RECORDING_LINK =
@@ -28,10 +29,7 @@ export function Recording() {
             Придбати запис конгресу
           </a>
 
-          <p className={styles.prices}>
-            <span className={styles.priceNew}>2&nbsp;500&nbsp;грн</span>
-            <s className={styles.priceOld}>3&nbsp;999&nbsp;грн</s>
-          </p>
+          <RecordingPrices />
         </div>
       </div>
     </section>
