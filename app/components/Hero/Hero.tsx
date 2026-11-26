@@ -1,5 +1,6 @@
 import styles from "./Hero.module.scss";
 import { aosDelay } from "../../lib/aos";
+import { HeroBuyButton } from "./HeroBuyButton";
 
 export function Hero() {
   return (
@@ -26,9 +27,7 @@ export function Hero() {
 
         {/* Без data-aos: на мобілці кнопка біля низу екрана, нижче зони спрацювання ScrollReveal */}
         <div className={styles.actions}>
-          <a href="#recording" className={styles.btnCourse}>
-            Придбати запис
-          </a>
+          <HeroBuyButton />
         </div>
       </div>
 

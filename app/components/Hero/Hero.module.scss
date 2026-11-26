@@ -153,13 +153,17 @@
   }
 }
 
-// «Придбати запис» — розмір і шрифт як у колишньої «Зареєструватися», фон як у кнопки запису конгресу
+// «Придбати запис за ~~стара~~ нова» + бейдж знижки в куті (Figma: кнопка Black Friday).
+// Розмір і шрифт як у колишньої «Зареєструватися», фон як у кнопки запису конгресу.
 .btnCourse {
+  position: relative;
   display: inline-flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  height: 46px;
-  padding-inline: 36px;
+  gap: 2px 10px;
+  min-height: 46px;
+  padding: 8px 36px;
   border-radius: 11px; // Figma: corner radius 11
   background: $gradient-accent;
   color: $color-dark;
@@ -173,5 +177,62 @@
   &:hover {
     transform: translateY(-1px);
     opacity: 0.92;
+  }
+
+  @include mobile {
+    padding-inline: 18px;
+    font-size: 15px;
+  }
+}
+
+.btnLabel {
+  white-space: nowrap;
+}
+
+.btnPrices,
+.btnBadge {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+
+  .pricesReady & {
+    opacity: 1;
+  }
+}
+
+.btnPrices {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.btnPriceOld {
+  font-weight: 400;
+  opacity: 0.6;
+  text-decoration-thickness: 1.5px;
+}
+
+.btnPriceNew {
+  font-weight: 700;
+}
+
+// Бейдж «−35%» на правому верхньому куті кнопки, як у Figma
+.btnBadge {
+  position: absolute;
+  top: -12px;
+  right: -10px;
+  padding: 3px 8px;
+  border-radius: 6px;
+  background: $color-dark;
+  color: $color-white;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.2;
+  white-space: nowrap;
+  pointer-events: none;
+
+  @include mobile {
+    right: -6px;
+    font-size: 13px;
   }
 }
